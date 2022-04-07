@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktmx_mercury=self.webpackChunktmx_mercury||[]).push([[247],{3247:function(r,e,s){s.r(e);s(2791);var a=s(184);e.default=function(r){var e=r.nome,s=r.mesorregiao;return(0,a.jsxs)("div",{className:"municipios border border-primary alert alert-secondary",role:"alert",children:[(0,a.jsx)("strong",{className:"text-primary",children:e})," ",(0,a.jsx)("sup",{className:"text-muted",children:s})]})}}}]);
+//# sourceMappingURL=247.dfa6454f.chunk.js.map

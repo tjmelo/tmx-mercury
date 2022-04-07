@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktmx_mercury=self.webpackChunktmx_mercury||[]).push([[749],{3749:function(r,e,c){c.r(e);c(2791);var u=c(184);e.default=function(r){var e=r.children;return(0,u.jsx)("div",{className:"row",children:e})}}}]);
+//# sourceMappingURL=749.90d3a325.chunk.js.map
