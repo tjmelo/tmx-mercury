@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/tmx-mercury/static/css/main.234cd1a1.css",
-    "main.js": "/tmx-mercury/static/js/main.48bd268b.js",
-    "static/js/689.a583f2d6.chunk.js": "/tmx-mercury/static/js/689.a583f2d6.chunk.js",
-    "static/js/453.6f42be2d.chunk.js": "/tmx-mercury/static/js/453.6f42be2d.chunk.js",
-    "static/js/345.b2fdbaed.chunk.js": "/tmx-mercury/static/js/345.b2fdbaed.chunk.js",
+    "main.css": "/tmx-mercury/static/css/main.4d3f76d7.css",
+    "main.js": "/tmx-mercury/static/js/main.51324e8e.js",
+    "static/js/689.9409720c.chunk.js": "/tmx-mercury/static/js/689.9409720c.chunk.js",
+    "static/js/453.c46dd2d6.chunk.js": "/tmx-mercury/static/js/453.c46dd2d6.chunk.js",
+    "static/js/345.1323d1a1.chunk.js": "/tmx-mercury/static/js/345.1323d1a1.chunk.js",
     "static/js/894.01ddb1e5.chunk.js": "/tmx-mercury/static/js/894.01ddb1e5.chunk.js",
     "static/js/749.90d3a325.chunk.js": "/tmx-mercury/static/js/749.90d3a325.chunk.js",
     "static/js/512.58987280.chunk.js": "/tmx-mercury/static/js/512.58987280.chunk.js",
     "static/js/569.e1908741.chunk.js": "/tmx-mercury/static/js/569.e1908741.chunk.js",
     "static/js/523.3e8c9237.chunk.js": "/tmx-mercury/static/js/523.3e8c9237.chunk.js",
     "index.html": "/tmx-mercury/index.html",
-    "main.234cd1a1.css.map": "/tmx-mercury/static/css/main.234cd1a1.css.map",
-    "main.48bd268b.js.map": "/tmx-mercury/static/js/main.48bd268b.js.map",
-    "689.a583f2d6.chunk.js.map": "/tmx-mercury/static/js/689.a583f2d6.chunk.js.map",
-    "453.6f42be2d.chunk.js.map": "/tmx-mercury/static/js/453.6f42be2d.chunk.js.map",
-    "345.b2fdbaed.chunk.js.map": "/tmx-mercury/static/js/345.b2fdbaed.chunk.js.map",
+    "main.4d3f76d7.css.map": "/tmx-mercury/static/css/main.4d3f76d7.css.map",
+    "main.51324e8e.js.map": "/tmx-mercury/static/js/main.51324e8e.js.map",
+    "689.9409720c.chunk.js.map": "/tmx-mercury/static/js/689.9409720c.chunk.js.map",
+    "453.c46dd2d6.chunk.js.map": "/tmx-mercury/static/js/453.c46dd2d6.chunk.js.map",
+    "345.1323d1a1.chunk.js.map": "/tmx-mercury/static/js/345.1323d1a1.chunk.js.map",
     "894.01ddb1e5.chunk.js.map": "/tmx-mercury/static/js/894.01ddb1e5.chunk.js.map",
     "749.90d3a325.chunk.js.map": "/tmx-mercury/static/js/749.90d3a325.chunk.js.map",
     "512.58987280.chunk.js.map": "/tmx-mercury/static/js/512.58987280.chunk.js.map",
@@ -23,7 +23,7 @@
     "523.3e8c9237.chunk.js.map": "/tmx-mercury/static/js/523.3e8c9237.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.234cd1a1.css",
-    "static/js/main.48bd268b.js"
+    "static/css/main.4d3f76d7.css",
+    "static/js/main.51324e8e.js"
   ]
 }
