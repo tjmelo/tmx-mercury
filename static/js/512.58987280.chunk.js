@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktmx_mercury=self.webpackChunktmx_mercury||[]).push([[512],{512:function(r,e,t){t.r(e),t.d(e,{default:function(){return a}});t(2791);var s=t(184),a=function(r){var e=r.nome,t=r.mesorregiao;return(0,s.jsxs)("div",{className:"municipios border border-primary alert alert-secondary","data-testid":"city",children:[(0,s.jsx)("strong",{className:"text-primary",children:e})," ",(0,s.jsx)("sup",{className:"text-muted",children:t})]})}}}]);
+//# sourceMappingURL=512.58987280.chunk.js.map
