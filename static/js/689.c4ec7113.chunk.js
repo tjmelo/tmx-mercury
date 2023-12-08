@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktmx_mercury=self.webpackChunktmx_mercury||[]).push([[689],{6689:(e,s,n)=>{n.r(s),n.d(s,{default:()=>a});var r=n(2791),t=n(184);const c=(0,r.lazy)((()=>Promise.all([n.e(569),n.e(16)]).then(n.bind(n,1016))));class a extends r.Component{render(){return(0,t.jsx)("section",{className:"container",children:(0,t.jsx)(c,{})})}}}}]);
+//# sourceMappingURL=689.c4ec7113.chunk.js.map
