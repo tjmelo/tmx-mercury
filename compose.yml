@@ -1,9 +1,9 @@
 services:
-  tmx-mercury:
-    container_name: ${PROJECT_NAME:-tmx-mercury}-c
-    build: .
-    image: ${PROJECT_NAME:-tmx-mercury}
-    ports:
-      - 3000:3000
-    volumes:
-      - .:/${PROJECT_NAME:-tmx-mercury}
+    tmx-mercury:
+        container_name: ${PROJECT_NAME:-tmx-mercury}-c
+        build: .
+        image: ${PROJECT_NAME:-tmx-mercury}
+        ports:
+            - 3000:3000
+        volumes:
+            - .:/${PROJECT_NAME:-tmx-mercury}
