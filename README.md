@@ -11,7 +11,7 @@
 -   [Preview Screens](#preview-screens)
 -   [Project details](#project-details)
     -   [Simple Develop Process](#simple-develop-process)
-    -   [Docker develop Process](#docker-develop-process)
+    -   [Docker Develop Process](#docker-develop-process)
 
 # About app
 
