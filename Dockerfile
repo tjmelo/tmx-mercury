@@ -3,7 +3,7 @@ FROM node:20-alpine
 ENV TMX_PATH tmx-mercury \
     TMX_NAME "TMX Mercury"
 
-ENV NODE_ENV prodution
+ENV NODE_ENV production
 
 LABEL name=${TMX_NAME}
 
@@ -15,11 +15,9 @@ WORKDIR /${TMX_PATH}
 
 COPY package*.json ./
 
-RUN npm ci --only=prodution
+RUN npm ci --only=production --ignore-scripts
 
-USER node
-
-COPY --chown=node:node . .
+COPY . .
 
 EXPOSE 3000
 

@@ -1,6 +1,6 @@
 {
     "name": "tmx-mercury",
-    "version": "1.3.3",
+    "version": "1.3.4",
     "homepage": "https://tjmelo.github.io/tmx-mercury",
     "dependencies": {
         "@testing-library/jest-dom": "^5.16.4",

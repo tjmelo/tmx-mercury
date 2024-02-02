@@ -1,7 +1,19 @@
-# TMX Mercury project :high_brightness:
+![project](https://img.shields.io/badge/project-TMX%20Mercury-blue)
 
+# The county listed for states in Brazil
+
+![Size](https://img.shields.io/github/repo-size/tjmelo/tmx-mercury) ![Version](https://img.shields.io/github/package-json/v/tjmelo/tmx-mercury) ![Release](https://img.shields.io/github/v/release/tjmelo/tmx-mercury) ![Last Commit](https://img.shields.io/github/last-commit/tjmelo/tmx-mercury/main)
 ![Passing](https://img.shields.io/github/actions/workflow/status/tjmelo/tmx-mercury/github-actions-demo.yml)
-![Version](https://img.shields.io/github/v/release/tjmelo/tmx-mercury)
+
+## Table of content
+
+-   [About app](#about-app)
+-   [Preview Screens](#preview-screens)
+-   [Project details](#project-details)
+    -   [Simple Develop Process](#simple-develop-process)
+    -   [Docker Develop Process](#docker-develop-process)
+
+# About app
 
 ### The project proposal is to show a listed county for states in Brazil. It works like this:
 
@@ -10,42 +22,63 @@
 
 Online project: [https://tjmelo.github.io/tmx-mercury/](https://tjmelo.github.io/tmx-mercury/)
 
-## Preview
+# Preview Screens
 
-## ![Screen](https://github.com/tjmelo/tmx-mercury/blob/main/public/TMXMercury.png)
+![Screen](/public/TMXMercury.png)
 
-![Screen](https://github.com/tjmelo/tmx-mercury/blob/main/public/TMXMercury2screen.png)
+![Screen](/public/TMXMercury2screen.png)
 
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/bootstrap?color=yellow)
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/sass?color=yellow)
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/scrollreveal?color=yellow)
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/axios?color=yellow)
+# Project Details
 
-## Particularities
+Some principal project dependencies
 
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/react?color=yellow)
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/react-router-dom?color=yellow)
+![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/bootstrap?color=blue)
+![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/sass?color=blue)
+![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/scrollreveal?color=blue)
+![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/axios?color=blue)
+![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/react?color=blue)
+![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/react-router-dom?color=blue)
 
-> The project is building under React lib, using React Router for data persisting.
+## Simple Develop Process
 
-:pushpin: Clone and install the projects' dependencies
+Download the project
 
-```console
-tmx@mercury:~$ npm i
+Clone or fork this repository
+
+```sh
+git clone https://github.com/tjmelo/tmx-mercury.git
+
+cd tmx-mercury
+
+git checkout -b develop
+
+npm install && npm start
 ```
 
-:pushpin: Run the project at local environment
+## Docker Develop Process
 
-```console
-tmx@mercury:~$ npm start
+```sh
+git clone https://github.com/tjmelo/tmx-mercury.git
+
+cd tmx-mercury
+
+docker compose up -d
 ```
 
-:pushpin: Compiler for production
+Install from the command line
 
-```console
-tmx@mercury:~$ npm run build
+```
+docker pull ghcr.io/tjmelo/tmx-mercury:latest
 ```
 
-![Size](https://img.shields.io/github/languages/code-size/tjmelo/tmx-mercury)
+or image in **Docker Hub** for optional download
+
+```
+docker pull tmwd/tmx-mercury:v1
+```
+
+Open the app on a browser http://localhost:3000/tmx-mercury
+
+---
 
 Have a fun! :tada:
