@@ -64,7 +64,12 @@
         "gh-pages": "^6.1.1",
         "husky": "^9.0.10",
         "prettier": "^3.2.4",
-        "typescript": "^4.7.4"
+        "typescript": "^5.3.3"
+    },
+    "overrides": {
+        "react-scripts": {
+            "typescript": "^5"
+        }
     },
     "type": "module"
 }
