@@ -1,17 +1,17 @@
 ![project](https://img.shields.io/badge/project-TMX%20Mercury-blue)
 
 # The county listed for states in Brazil
+
 ![Size](https://img.shields.io/github/repo-size/tjmelo/tmx-mercury) ![Version](https://img.shields.io/github/package-json/v/tjmelo/tmx-mercury) ![Release](https://img.shields.io/github/v/release/tjmelo/tmx-mercury) ![Last Commit](https://img.shields.io/github/last-commit/tjmelo/tmx-mercury/main)
 ![Passing](https://img.shields.io/github/actions/workflow/status/tjmelo/tmx-mercury/github-actions-demo.yml)
 
 ## Table of content
 
-- [About app](#about-app)
-- [Preview Screens](#preview-screens)
-- [Project details](#project-details)
-    - [Simple Develop Process](#simple-develop-process)
-    - [Docker develop Process](#docker-develop-process)
-
+-   [About app](#about-app)
+-   [Preview Screens](#preview-screens)
+-   [Project details](#project-details)
+    -   [Simple Develop Process](#simple-develop-process)
+    -   [Docker develop Process](#docker-develop-process)
 
 # About app
 
@@ -64,6 +64,7 @@ cd tmx-mercury
 
 docker compose up -d
 ```
+
 Install from the command line
 
 ```
@@ -71,6 +72,7 @@ docker pull ghcr.io/tjmelo/tmx-mercury:latest
 ```
 
 or image in **Docker Hub** for optional download
+
 ```
 docker pull tmwd/tmx-mercury:v1
 ```
