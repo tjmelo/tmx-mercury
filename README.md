@@ -3,7 +3,7 @@
 # The county listed for states in Brazil
 
 ![Size](https://img.shields.io/github/repo-size/tjmelo/tmx-mercury) ![Version](https://img.shields.io/github/package-json/v/tjmelo/tmx-mercury) ![Release](https://img.shields.io/github/v/release/tjmelo/tmx-mercury) ![Last Commit](https://img.shields.io/github/last-commit/tjmelo/tmx-mercury/main)
-![Passing](https://img.shields.io/github/actions/workflow/status/tjmelo/tmx-mercury/github-actions-demo.yml)
+![Passing](https://img.shields.io/github/actions/workflow/status/tjmelo/tmx-mercury/checkout-ci.yml)
 
 ## Table of content
 
