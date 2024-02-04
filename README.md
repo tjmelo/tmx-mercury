@@ -74,7 +74,7 @@ docker pull ghcr.io/tjmelo/tmx-mercury:latest
 or image in **Docker Hub** for optional download
 
 ```
-docker pull tmwd/tmx-mercury:v1
+docker pull tmwd/tmx-mercury
 ```
 
 Open the app on a browser http://localhost:3000/tmx-mercury
