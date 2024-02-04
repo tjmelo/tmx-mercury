@@ -2,7 +2,7 @@ services:
     tmx-mercury:
         container_name: ${PROJECT_NAME:-tmx-mercury}-c
         build: .
-        image: tmwd/${PROJECT_NAME:-tmx-mercury}
+        image: tmwd/${PROJECT_NAME:-tmx-mercury}:${PROJECT_VERSION:-latest}
         ports:
             - 3000:3000
         volumes:
