@@ -11,8 +11,10 @@ export const Notify = () => {
 
     if (!hasNotificationStorage) {
         Notification.requestPermission(() => {
-            isNotify === 'granted' && localStorage.setItem(toNotifyConstants.NOTIFY_STORE, toNotifyConstants.NOTIFY_GRANTED);
-            isNotify === 'denied' && localStorage.setItem(toNotifyConstants.NOTIFY_STORE, toNotifyConstants.NOTIFY_DENIED);
+            isNotify === 'granted' &&
+                localStorage.setItem(toNotifyConstants.NOTIFY_STORE, toNotifyConstants.NOTIFY_GRANTED);
+            isNotify === 'denied' &&
+                localStorage.setItem(toNotifyConstants.NOTIFY_STORE, toNotifyConstants.NOTIFY_DENIED);
         });
     }
 };
