@@ -1,7 +1,7 @@
 import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { instanceAPI } from '../../service/RequestAPI';
 import { TCard } from '../../types';
-import { Loading, Warning } from '../Feedback/Feedback';
+import { Loading } from '../Feedback/Feedback';
 
 const Cards = lazy(() => import('../Cards'));
 const Search = lazy(() => import('../Search'));
@@ -15,11 +15,13 @@ const ListState = () => {
         <Cards key={e.id} nome={e.nome} sigla={e.sigla} regiao={e.regiao.nome} link={() => e} />
     );
 
+    const getSortData = (a: { nome: number }, b: { nome: number }) => (a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0)
+
     useEffect(() => {
         (async () => {
             const { data } = await instanceAPI.get('estados');
             setData(data);
-            data.sort((a: { nome: number }, b: { nome: number }) => (a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0));
+            data.sort(getSortData);
             setRenderData(data.map((info: TCard) => getCards(info)));
         })();
     }, []);
@@ -41,7 +43,7 @@ const ListState = () => {
                 Estados do Brasil{' '}
             </h1>
             <Search search={searchAction} />
-            <RenderResult>{!renderData.length ? <Warning /> : renderData}</RenderResult>
+            <RenderResult>{!renderData.length ? <Loading /> : renderData}</RenderResult>
         </Suspense>
     );
 };
