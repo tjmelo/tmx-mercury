@@ -15,7 +15,7 @@ const ListState = () => {
         <Cards key={e.id} nome={e.nome} sigla={e.sigla} regiao={e.regiao.nome} link={() => e} />
     );
 
-    const getSortData = (a: { nome: number }, b: { nome: number }) => (a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0)
+    const getSortData = (a: { nome: number }, b: { nome: number }) => (a.nome < b.nome ? -1 : a.nome > b.nome ? 1 : 0);
 
     useEffect(() => {
         (async () => {
