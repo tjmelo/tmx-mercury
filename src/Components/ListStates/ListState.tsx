@@ -8,9 +8,9 @@ const Search = lazy(() => import('../Search'));
 const RenderResult = lazy(() => import('../Render'));
 
 const ListState = () => {
-    const data  = useData()
+    const data = useData();
 
-    const srt = (a: {nome: number}, b: {nome: number}) => a.nome > b.nome ? 1 : 0
+    const srt = (a: { nome: number }, b: { nome: number }) => (a.nome > b.nome ? 1 : 0);
     const getSortData = (a: { nome: number }, b: { nome: number }) => (a.nome < b.nome ? -1 : srt(a, b));
 
     const getCards = (e: TCard) => (
@@ -18,7 +18,7 @@ const ListState = () => {
     );
 
     data.sort(getSortData);
-    const renderData = data.map((info: TCard) => getCards(info))
+    const renderData = data.map((info: TCard) => getCards(info));
 
     const searchAction = (e: any) => {
         const searchCards = data.filter((el: any) => {
