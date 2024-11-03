@@ -8,7 +8,7 @@ const Search = lazy(() => import('../Search'));
 const RenderResult = lazy(() => import('../Render'));
 
 const ListState = () => {
-    const data = useData();
+    const data = useData('estados');
 
     const srt = (a: { nome: number }, b: { nome: number }) => (a.nome > b.nome ? 1 : 0);
     const getSortData = (a: { nome: number }, b: { nome: number }) => (a.nome < b.nome ? -1 : srt(a, b));
@@ -33,8 +33,7 @@ const ListState = () => {
     return (
         <Suspense fallback={<Loading />}>
             <h1 className="py-3" data-testid="title-list-state">
-                {' '}
-                Estados do Brasil{' '}
+                Estados do Brasil
             </h1>
             <Search search={searchAction} />
             <RenderResult>{!renderData.length ? <Loading /> : renderData}</RenderResult>
