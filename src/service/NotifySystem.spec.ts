@@ -1,7 +1,6 @@
-import { Notify } from './NotifySystem'
+import { Notify } from './NotifySystem';
 
 describe('Should render NotifySystem', () => {
-
     global.localStorage = {
         getItem: jest.fn(),
         setItem: jest.fn(),
@@ -14,9 +13,7 @@ describe('Should render NotifySystem', () => {
     global.Notification = jest.fn() as any;
     Notification.requestPermission = jest.fn();
 
-
     it('Should render Notify', () => {
-        Notify()
-    })
-
-})
+        Notify();
+    });
+});
