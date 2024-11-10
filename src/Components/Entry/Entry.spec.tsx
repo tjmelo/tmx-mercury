@@ -7,12 +7,12 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 jest.mock('../../service/NotifySystem.ts');
 
-test('Should render component <Entry />', async () => {  
+test('Should render component <Entry />', async () => {
     await waitFor(async () => {
         // do
-        render( <Entry />, { wrapper: Router });
+        render(<Entry />, { wrapper: Router });
 
         // then
-        expect(screen.getByText('Baixando os dados...')).toBeInTheDocument()
+        expect(screen.getByText('Baixando os dados...')).toBeInTheDocument();
     });
 });
