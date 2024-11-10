@@ -7,7 +7,7 @@ const Cards = lazy(() => import('../Cards'));
 const Search = lazy(() => import('../Search'));
 const RenderResult = lazy(() => import('../Render'));
 
-const ListState = () => {
+export const ListState = () => {
     const data = useData('estados');
 
     const srt = (a: { nome: number }, b: { nome: number }) => (a.nome > b.nome ? 1 : 0);
@@ -40,5 +40,3 @@ const ListState = () => {
         </Suspense>
     );
 };
-
-export { ListState };
