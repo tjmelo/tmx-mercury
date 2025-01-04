@@ -5,6 +5,7 @@ const Router = lazy(() => import('../Router'));
 class Entry extends React.Component {
     render() {
         Notify();
+
         return (
             <section className="container">
                 <Router />

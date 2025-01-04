@@ -6,14 +6,12 @@ import { BrowserRouter } from 'react-router-dom';
 
 const Entry = lazy(() => import('./Components/Entry'));
 
-const container: HTMLElement | any = document.getElementById('root');
+const container = document.getElementById('root') as HTMLElement;
 
 ReactDOM.createRoot(container).render(
-    <React.StrictMode>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-            <Suspense fallback={<Loading />}>
-                <Entry />
-            </Suspense>
-        </BrowserRouter>
-    </React.StrictMode>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <Suspense fallback={<Loading />}>
+            <Entry />
+        </Suspense>
+    </BrowserRouter>
 );

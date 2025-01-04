@@ -1,13 +1,17 @@
 import React from 'react';
-import { RenderResult } from './Render';
-import { render } from '@testing-library/react';
 
-test('Should render component <State     />', async () => {
-    const { getByTestId } = render(
+import { RenderResult } from './Render';
+import { render, screen } from '@testing-library/react';
+
+test('Should render component <State />', async () => {
+    // do
+    render(
         <RenderResult>
-            <div></div>
+            <div />
         </RenderResult>
     );
-    const element = getByTestId('render-result');
+
+    // then
+    const element = screen.getByTestId('render-result');
     expect(element).toBeTruthy();
 });
