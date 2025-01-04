@@ -1,7 +1,6 @@
-import { MouseEventHandler, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from 'scrollreveal';
-import React from 'react';
 import { ICards } from '../../types';
 
 const Cards: React.FC<ICards> = ({ nome, sigla, regiao, link }): JSX.Element => {
