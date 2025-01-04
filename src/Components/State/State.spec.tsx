@@ -1,17 +1,19 @@
 import React from 'react';
+import '@testing-library/jest-dom';
+
 import { State } from './State';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { render } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import { render, screen } from '@testing-library/react';
 
-test('Should render component <State     />', async () => {
-    const { getByText } = render(
-        <Router>
+test('Should render component <State/>', async () => {
+    // do
+    render(
+        <BrowserRouter>
             <State />
-        </Router>
+        </BrowserRouter>
     );
-    const element = getByText('Muncípios do');
-    expect(element).toBeTruthy();
 
-    const link = getByText('Voltar para os estados');
-    expect(link).toBeTruthy();
+    // then
+    expect(screen.getByText('Muncípios do')).toBeInTheDocument();
+    expect(screen.getByText('Voltar para os estados')).toBeInTheDocument();
 });
