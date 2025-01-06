@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 declare interface RenderResultProps {
-    children: any;
+    children: ReactNode;
 }
 
-const RenderResult: React.FC<RenderResultProps> = ({ children }) => (
+export const RenderResult: React.FC<RenderResultProps> = ({ children }) => (
     <div className="row" data-testid="render-result">
         {children}
     </div>
 );
-
-export { RenderResult };
