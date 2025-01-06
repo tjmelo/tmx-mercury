@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { ChangeEvent, Suspense, lazy, useEffect, useState } from 'react';
 import { TCard } from '../../types';
 import { Loading } from '../Feedback/Feedback';
 import { useData } from '../../hooks';
@@ -9,6 +9,7 @@ const RenderResult = lazy(() => import('../Render'));
 
 export const ListState = () => {
     const data = useData('estados');
+    const [info, setInfo] = useState<JSX.Element[]>([]);
 
     const srt = (a: { nome: number }, b: { nome: number }) => (a.nome > b.nome ? 1 : 0);
     const getSortData = (a: { nome: number }, b: { nome: number }) => (a.nome < b.nome ? -1 : srt(a, b));
@@ -20,14 +21,16 @@ export const ListState = () => {
     data.sort(getSortData);
     const renderData = data.map((info: TCard) => getCards(info));
 
-    const searchAction = (e: any) => {
-        const searchCards = data.filter((el: any) => {
+    useEffect(() => setInfo(renderData), [data])
+
+    const searchAction = (e: ChangeEvent<HTMLInputElement>) => {
+        const searchCards = data.filter((el: { nome: string }) => {
             const search = new RegExp(e.target.value, 'gi');
             const input = el.nome;
             return search.test(input);
         });
 
-        return searchCards.map((info: TCard) => getCards(info));
+        return setInfo(searchCards.map((info: TCard) => getCards(info)));
     };
 
     return (
@@ -36,7 +39,7 @@ export const ListState = () => {
                 Estados do Brasil
             </h1>
             <Search search={searchAction} />
-            <RenderResult>{!renderData.length ? <Loading /> : renderData}</RenderResult>
+            <RenderResult>{!info?.length ? <Loading /> : info}</RenderResult>
         </Suspense>
     );
 };
