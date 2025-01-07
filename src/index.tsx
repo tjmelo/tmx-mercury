@@ -9,7 +9,7 @@ const Entry = lazy(() => import('./Components/Entry'));
 const container = document.getElementById('root') as HTMLElement;
 
 ReactDOM.createRoot(container).render(
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
         <Suspense fallback={<Loading />}>
             <Entry />
         </Suspense>
