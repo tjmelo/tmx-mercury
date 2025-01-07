@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunktmx_mercury=self.webpackChunktmx_mercury||[]).push([[238],{238:(e,t,r)=>{r.r(t),r.d(t,{default:()=>s});var o=r(555),c=(r(483),r(723));const s=e=>{let{search:t}=e;const r={type:"text",onKeyUp:t,className:"form-control form-control-lg mb-4",placeholder:"Digite o nome de um estado aqui..."};return(0,c.jsx)("input",(0,o.A)({},r))}}}]);
-//# sourceMappingURL=238.865d62dc.chunk.js.map
