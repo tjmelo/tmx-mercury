@@ -1,0 +1,3 @@
+- name: Code Review with ChatGPT
+  uses: cirolini/genai-code-review@v2
+            
