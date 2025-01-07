@@ -13,6 +13,7 @@ const commonConfig = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, '../build'),
+    clean: true,
   },
   module: {
     rules: [
@@ -32,6 +33,7 @@ const commonConfig = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      inject: true,
       template: './public/index.html',
     }),
     new ModuleFederationPlugin({
