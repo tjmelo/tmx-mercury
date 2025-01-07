@@ -1,28 +1,14 @@
 {
     "compilerOptions": {
-        "module": "esnext",
-        "noImplicitAny": true,
-        "removeComments": true,
-        "preserveConstEnums": true,
-        "outFile": "../../built/local/tsc.js",
-        "sourceMap": true,
-        "target": "es5",
-        "checkJs": true,
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "noFallthroughCasesInSwitch": true,
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "noEmit": true,
-        "jsx": "react-jsx",
-        "typeRoots": ["node_modules/@types"]
+      "target": "es5",              
+      "lib": ["dom", "es2015"],     
+      "jsx": "react",               
+      "moduleResolution": "node",   
+      "strict": true,               
+      "esModuleInterop": true,      
+      "skipLibCheck": true,         
+      "forceConsistentCasingInFileNames": true  
     },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules", "**/*.spec.ts"]
-}
+    "include": ["src/**/*"],        
+    "exclude": ["node_modules"]     
+  }
