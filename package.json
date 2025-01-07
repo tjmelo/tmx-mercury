@@ -35,7 +35,7 @@
         "test": "jest --collect-coverage --transformIgnorePatterns 'node_modules/(?!)/' --watchAll=false",
         "predeploy": "yarn build",
         "deploy": "gh-pages -d build",
-        "serve": "serve -s build",
+        "serve": "serve -d build",
         "lint": "eslint --ext .tsx src/ && npx prettier --write . && npx prettier --check .",
         "docker:dev": "docker build -t tmx-mercury . && docker run -dp 3000:3000 --name tmx-mercury-c tmx-mercury"
     },
@@ -68,6 +68,7 @@
         "@types/react": "^18.2.52",
         "@types/react-dom": "^18.0.6",
         "@types/react-router-dom": "^5.3.3",
+        "copy-webpack-plugin": "^12.0.2",
         "css-loader": "^7.1.2",
         "eslint": "^8.20.0",
         "eslint-plugin-react": "^7.37.2",
