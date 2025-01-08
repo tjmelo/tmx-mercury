@@ -22,7 +22,7 @@
     "globalName": "TmxMercury",
     "pluginVersion": "0.8.8",
     "prefetchInterface": false,
-    "publicPath": "/"
+    "publicPath": "auto"
   },
   "shared": [],
   "remotes": [],
