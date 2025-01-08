@@ -9,12 +9,14 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const isGitHubPages = process.env.PUBLIC_URL !== undefined;
+const publicPath = isGitHubPages ? process.env.PUBLIC_URL : '/';
 const commonConfig = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, '../build'),
-    publicPath: 'auto',
     clean: true,
+    publicPath
   },
   module: {
     rules: [
