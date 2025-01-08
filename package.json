@@ -22,9 +22,9 @@
         "scrollreveal": "^4.0.9"
     },
     "scripts": {
-        "prefetch": "node config/prefetch.js",
-        "prelint": "node config/prelint.js",
-        "prestart": "node config/init.js",
+        "prefetch": "node commands/prefetch.js",
+        "prelint": "node commands/prelint.js",
+        "prestart": "node commands/init.js",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test --collect-coverage --transformIgnorePatterns 'node_modules/(?!)/' --watchAll=false",
