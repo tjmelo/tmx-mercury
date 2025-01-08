@@ -13,7 +13,7 @@ const commonConfig = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, '../build'),
-    publicPath: '/',
+    publicPath: 'auto',
     clean: true,
   },
   module: {
