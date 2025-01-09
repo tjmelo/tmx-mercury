@@ -3,6 +3,7 @@
     "version": "1.4.4",
     "homepage": "https://tjmelo.github.io/tmx-mercury",
     "dependencies": {
+        "@craco/craco": "^7.1.0",
         "@testing-library/jest-dom": "^6.6.3",
         "@testing-library/react": "^14.2.1",
         "@testing-library/user-event": "^14.3.0",
@@ -19,18 +20,21 @@
         "react-router-dom": "^6.22.0",
         "react-scripts": "^5.0.1",
         "sass": "^1.70.0",
-        "scrollreveal": "^4.0.9"
+        "scrollreveal": "^4.0.9",
+        "webpack": "^5.97.1",
+        "webpack-cli": "^6.0.1"
     },
     "scripts": {
         "prefetch": "node commands/prefetch.js",
         "prelint": "node commands/prelint.js",
         "prestart": "node commands/init.js",
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test --collect-coverage --transformIgnorePatterns 'node_modules/(?!)/' --watchAll=false",
-        "eject": "react-scripts eject",
+        "start": "craco start",
+        "build": "craco build",
+        "test": "craco test --collect-coverage --transformIgnorePatterns 'node_modules/(?!)/' --watchAll=false",
+        "eject": "craco eject",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build",
+        "serve": "serve -d build",
         "lint": "eslint --ext .tsx src/ && npx prettier --write . && npx prettier --check .",
         "docker:dev": "docker build -t tmx-mercury . && docker run -dp 3000:3000 --name tmx-mercury-c tmx-mercury"
     },
@@ -61,11 +65,13 @@
         "@types/react": "^18.2.52",
         "@types/react-dom": "^18.0.6",
         "@types/react-router-dom": "^5.3.3",
+        "@types/webpack": "^5.28.5",
         "eslint": "^8.20.0",
         "eslint-plugin-react": "^7.37.2",
         "gh-pages": "^6.1.1",
         "prettier": "^3.2.4",
-        "typescript": "^5.6.3"
+        "typescript": "^5.6.3",
+        "serve": "^14.2.4"
     },
     "overrides": {
         "react-scripts": {
