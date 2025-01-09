@@ -1,6 +1,6 @@
 import React, { KeyboardEventHandler } from 'react';
 interface SearchProps {
-    search?: KeyboardEventHandler<HTMLInputElement> | any;
+    search?: KeyboardEventHandler<HTMLInputElement>;
 }
 
 export const Search: React.FC<SearchProps> = ({ search }): JSX.Element => {

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, Suspense, lazy, useEffect, useState } from 'react';
+import React, { KeyboardEvent, Suspense, lazy, useEffect, useState } from 'react';
 import { TCard } from '../../types';
 import { Loading } from '../Feedback/Feedback';
 import { useData } from '../../hooks';
@@ -23,9 +23,9 @@ export const ListState = () => {
 
     useEffect(() => setInfo(renderData), [data])
 
-    const searchAction = (e: ChangeEvent<HTMLInputElement>) => {
+    const searchAction = (e: KeyboardEvent<HTMLInputElement>) => {
         const searchCards = data.filter((el: { nome: string }) => {
-            const search = new RegExp(e.target.value, 'gi');
+            const search = new RegExp((e.target as HTMLInputElement).value, 'gi');
             const input = el.nome;
             return search.test(input);
         });
