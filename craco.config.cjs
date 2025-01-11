@@ -3,6 +3,8 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 module.exports = {
   webpack: {
     configure: (webpackConfig, { env, paths }) => {
+
+      const deps = require('./package.json').dependencies
       
       webpackConfig.output.publicPath =
         env === "production"
@@ -17,11 +19,14 @@ module.exports = {
             './index': './src/index.tsx',
           },
           shared: {
+            ...deps,
             react: {
               singleton: true,
+              requiredVersion: deps.react,
             },
             'react-dom': {
               singleton: true,
+              requiredVersion: deps['react-dom'],
             },
           },
         })
