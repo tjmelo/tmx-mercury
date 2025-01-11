@@ -17,8 +17,16 @@ module.exports = {
             './index': './src/index.tsx',
           },
           shared: {
-            react: { singleton: true, eager: true },
-            'react-dom': { singleton: true, eager: true },
+            react: {
+              singleton: true,
+              eager: true,
+              requiredVersion: require('./package.json').dependencies.react, // Match the version in package.json
+            },
+            'react-dom': {
+              singleton: true,
+              eager: true,
+              requiredVersion: require('./package.json').dependencies['react-dom'], // Match the version in package.json
+            },
           },
         })
       );
