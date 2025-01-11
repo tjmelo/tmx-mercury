@@ -16,7 +16,7 @@ module.exports = {
           name: 'TmxMercury',
           filename: 'remoteEntry.js',
           exposes: {
-            './Entry': './src/Components/Entry/Entry.tsx',
+            './Entry': './src/Components/Entry/index.ts',
           },
           shared: {
             ...deps,
