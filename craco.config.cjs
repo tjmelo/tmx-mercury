@@ -19,13 +19,9 @@ module.exports = {
           shared: {
             react: {
               singleton: true,
-              eager: true,
-              requiredVersion: require('./package.json').dependencies.react, // Match the version in package.json
             },
             'react-dom': {
               singleton: true,
-              eager: true,
-              requiredVersion: require('./package.json').dependencies['react-dom'], // Match the version in package.json
             },
           },
         })
