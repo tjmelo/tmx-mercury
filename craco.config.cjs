@@ -8,15 +8,15 @@ module.exports = {
       
       webpackConfig.output.publicPath =
         env === "production"
-          ? "https://tjmelo.github.io/tmx-mercury/" // Production CDN URL
-          : "http://localhost:3000/tmx-mercury/"; 
+        ? "https://tjmelo.github.io/tmx-mercury/" // Production CDN URL
+        : "http://localhost:3000/tmx-mercury/";  
 
       webpackConfig.plugins.push(
         new ModuleFederationPlugin({
           name: 'TmxMercury',
           filename: 'remoteEntry.js',
           exposes: {
-            './index': './src/index.tsx',
+            './Entry': './src/Components/Entry/Entry.tsx',
           },
           shared: {
             ...deps,
