@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 
 import React from 'react';
-import { Entry } from './Entry';
+import Entry from './Entry';
 import { render, waitFor, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
