@@ -6,10 +6,7 @@ module.exports = {
 
       const deps = require('./package.json').dependencies
 
-      webpackConfig.output.publicPath =
-        env === "production"
-        ? "https://tjmelo.github.io/tmx-mercury/" // Production CDN URL
-        : "http://localhost:3000/";  
+      webpackConfig.output.publicPath = "auto" 
 
       webpackConfig.plugins.push(
         new ModuleFederationPlugin({
