@@ -5,7 +5,7 @@ import Entry from './Components/Entry'
 
 const App = () => {
     return (
-        <BrowserRouter basename='/'>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Suspense fallback={<Loading />}>
                 <Entry />
             </Suspense>
