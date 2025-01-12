@@ -5,7 +5,7 @@ import Entry from './Components/Entry'
 
 const App = () => {
     return (
-        <BrowserRouter basename={'/'}>
+        <BrowserRouter>
             <Suspense fallback={<Loading />}>
                 <Entry />
             </Suspense>
