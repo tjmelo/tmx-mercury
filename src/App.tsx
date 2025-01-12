@@ -4,8 +4,9 @@ import { Loading } from './Components/Feedback'
 import Entry from './Components/Entry'
 
 const App = () => {
+    console.log(location.pathname)
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={location.pathname}>
             <Suspense fallback={<Loading />}>
                 <Entry />
             </Suspense>
