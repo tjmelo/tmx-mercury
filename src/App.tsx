@@ -5,7 +5,7 @@ import Entry from './Components/Entry'
 
 const App = () => {
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL || '/tmx-mercury'}>
+        <BrowserRouter basename={'/'}>
             <Suspense fallback={<Loading />}>
                 <Entry />
             </Suspense>
