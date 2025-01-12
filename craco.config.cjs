@@ -5,7 +5,7 @@ module.exports = {
     configure: (webpackConfig, { env, paths }) => {
 
       const deps = require('./package.json').dependencies
-      
+
       webpackConfig.output.publicPath =
         env === "production"
         ? "https://tjmelo.github.io/tmx-mercury/" // Production CDN URL
@@ -16,10 +16,9 @@ module.exports = {
           name: 'TmxMercury',
           filename: 'remoteEntry.js',
           exposes: {
-            './Entry': './src/Components/Entry/Entry.tsx',
+            './TmxMercury': './src/App.tsx',
           },
           shared: {
-            ...deps,
             react: {
               singleton: true,
               requiredVersion: deps.react,
@@ -28,6 +27,10 @@ module.exports = {
               singleton: true,
               requiredVersion: deps['react-dom'],
             },
+            bootstrap: {
+              singleton: true,
+              requiredVersion: deps.bootstrap,
+            }
           },
         })
       );
