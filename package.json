@@ -1,7 +1,6 @@
 {
     "name": "tmx-mercury",
     "version": "1.4.4",
-    "homepage": "https://tjmelo.github.io/tmx-mercury",
     "dependencies": {
         "@craco/craco": "^7.1.0",
         "@testing-library/jest-dom": "^6.6.3",

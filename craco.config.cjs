@@ -9,7 +9,7 @@ module.exports = {
       webpackConfig.output.publicPath =
         env === "production"
         ? "https://tjmelo.github.io/tmx-mercury/" // Production CDN URL
-        : "http://localhost:3000/tmx-mercury/";  
+        : "http://localhost:3000/";  
 
       webpackConfig.plugins.push(
         new ModuleFederationPlugin({
