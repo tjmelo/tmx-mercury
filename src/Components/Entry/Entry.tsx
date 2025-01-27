@@ -1,6 +1,7 @@
 import React, { lazy } from 'react';
 import { Notify } from '../../service/NotifySystem';
 const Router = lazy(() => import('../Router'));
+import '../../App.scss'
 
 class Entry extends React.Component {
     render() {
