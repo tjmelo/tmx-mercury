@@ -1,6 +1,7 @@
 import React from 'react';
 import { Search } from './Search';
 import { render, screen } from '@testing-library/react';
+import "@testing-library/jest-dom";
 
 test('Should render component <Search />', async () => {
     // do

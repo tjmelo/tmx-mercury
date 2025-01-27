@@ -1,5 +1,5 @@
 import React from 'react';
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
 
 import { State } from './State';
 import { BrowserRouter } from 'react-router-dom';

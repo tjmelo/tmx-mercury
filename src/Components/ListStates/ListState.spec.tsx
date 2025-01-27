@@ -25,8 +25,11 @@ const useDataTest = [
 ];
 
 jest.mock('../Search', () => ({
-    Search: ({ search }: string) => <input type="text" value="test" onChange={e => search(e.target.value)} />,
-}));
+    Search: ({ search }: { search: (value: string) => void }) => (
+      <input type="text" value="test" onChange={e => search(e.target.value)} />
+    ),
+  }));
+
 
 test('Should render component <StateList />', async () => {
     //do
