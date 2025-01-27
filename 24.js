@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktmx_mercury=self.webpackChunktmx_mercury||[]).push([[24],{24:(e,t,r)=>{r.r(t),r.d(t,{default:()=>n});var c=r(914),o=r.n(c);const n=e=>{let{search:t}=e;const r={type:"text",onKeyUp:t,className:"form-control form-control-lg mb-4",placeholder:"Digite o nome de um estado aqui..."};return o().createElement("input",r)}}}]);
