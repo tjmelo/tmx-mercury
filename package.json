@@ -2,7 +2,6 @@
     "name": "tmx-mercury",
     "version": "1.4.4",
     "dependencies": {
-        "@craco/craco": "^7.1.0",
         "@testing-library/jest-dom": "^6.6.3",
         "@testing-library/react": "^14.2.1",
         "@testing-library/user-event": "^14.3.0",
@@ -31,7 +30,7 @@
         "prestart": "node commands/init.mjs",
         "start": "webpack server --open --config ./config/webpack.dev.ts",
         "build": "webpack --config ./config/webpack.prod.ts",
-        "test": "jest test --collect-coverage --transformIgnorePatterns 'node_modules/(?!)/' --watchAll=false",
+        "test": "jest --watch --coverage",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build",
         "serve": "serve -d build",
@@ -73,11 +72,13 @@
         "eslint": "^8.20.0",
         "eslint-plugin-react": "^7.37.2",
         "gh-pages": "^6.1.1",
+        "jest": "^29.7.0",
         "prettier": "^3.2.4",
         "sass-loader": "^16.0.4",
         "serve": "^14.2.4",
         "style-loader": "^4.0.0",
-        "typescript": "^5.6.3"
+        "typescript": "^5.6.3",
+        "jest-environment-jsdom": "^29.7.0"
     },
     "overrides": {
         "react-scripts": {

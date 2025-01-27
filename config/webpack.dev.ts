@@ -9,7 +9,7 @@ module.exports = merge(common, {
       directory: path.join(__dirname, "public"),
     },
     compress: true,
-    port: process.env.PORT || 300,
+    port: process.env.PORT || 3000,
     hot: true,
   },
 });
