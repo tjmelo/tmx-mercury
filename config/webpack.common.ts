@@ -45,8 +45,10 @@ const tmxMercury = {
   },
   plugins: [
     new htmlWebpackPlugin({
-      template: "./public/index.html",
-      filename: "index.html",
+        template: "./public/index.html",
+        filename: "index.html",
+        favicon: "./public/favicon.png",
+        publicPath: './'
     }),
     new ModuleFederationPlugin({
       name: 'TmxMercury',
