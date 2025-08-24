@@ -15,7 +15,7 @@ const State = () => {
 
     const [visibleCount, setVisibleCount] = useState(20);
 
-    React.useEffect(() => setVisibleCount(20), [data]);
+    useEffect(() => setVisibleCount(20), [data]);
 
     const renderData = data
         .slice(0, visibleCount)
