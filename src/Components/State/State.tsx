@@ -1,4 +1,5 @@
-import React, { lazy } from 'react';
+import React, { lazy, useState, useEffect } from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 import { Link, useParams } from 'react-router-dom';
 
@@ -12,9 +13,15 @@ const State = () => {
     const { estado } = useParams();
     const data = useData(`estados/${estado}/municipios`);
 
-    const renderData = data.map((info: InfoData) => (
-        <City key={info.id} nome={info.nome} mesorregiao={info.microrregiao.nome} />
-    ));
+    const [visibleCount, setVisibleCount] = useState(20);
+
+    useEffect(() => setVisibleCount(20), [data]);
+
+    const renderData = data
+        .slice(0, visibleCount)
+        .map((info: InfoData) => (
+            <City key={info.id} nome={info.nome} mesorregiao={info.microrregiao.nome} />
+        ));
 
     return (
         <>
@@ -22,7 +29,16 @@ const State = () => {
             <Link to="/" className="btn btn-link mb-3">
                 Voltar para os estados
             </Link>
-            {renderData ?? <Loading />}
+            <InfiniteScroll
+                dataLength={visibleCount}
+                next={() => setVisibleCount((prev) => Math.min(prev + 20, data.length))}
+                hasMore={visibleCount < data.length}
+                loader={<Loading />}
+                scrollThreshold={0.95}
+            >
+                {renderData}
+            </InfiniteScroll>
+            {renderData.length === 0 && <Loading />}
         </>
     );
 };
