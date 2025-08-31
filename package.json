@@ -1,6 +1,6 @@
 {
     "name": "tmx-mercury",
-    "version": "1.4.4",
+    "version": "1.5.6",
     "dependencies": {
         "@testing-library/jest-dom": "^6.6.3",
         "@testing-library/react": "^14.2.1",
