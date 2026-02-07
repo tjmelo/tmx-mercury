@@ -22,7 +22,7 @@
         "react-scripts": "^5.0.1",
         "sass": "^1.83.4",
         "scrollreveal": "^4.0.9",
-        "webpack": "^5.97.1",
+        "webpack": "^5.104.1",
         "webpack-cli": "^6.0.1",
         "webpack-merge": "^6.0.1"
     },
