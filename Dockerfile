@@ -1,7 +1,18 @@
 FROM node:20-alpine
 
-ENV TMX_PATH tmx-mercury \
-    TMX_NAME "TMX Mercury"
+ARG TMX_PATH=tmx-mercury
+ARG TMX_NAME="TMX Mercury"
+ARG PROJECT_NAME=tmx-mercury
+ARG PROJECT_VERSION=latest
+ARG NODE_ENV=production
+ARG PORT=3000
+
+ENV TMX_PATH=${TMX_PATH} \
+    TMX_NAME=${TMX_NAME} \
+    PROJECT_NAME=${PROJECT_NAME} \
+    PROJECT_VERSION=${PROJECT_VERSION} \
+    NODE_ENV=${NODE_ENV} \
+    PORT=${PORT}
 
 LABEL name=${TMX_NAME}
 
@@ -17,6 +28,6 @@ RUN npm install --ignore-scripts
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE ${PORT}
 
 CMD [ "yarn", "start" ]
