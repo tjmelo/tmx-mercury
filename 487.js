@@ -1,1 +1,1 @@
-"use strict";(self.webpackChunktmx_mercury=self.webpackChunktmx_mercury||[]).push([[487],{487:(e,r,t)=>{t.r(r),t.d(r,{default:()=>c});var s=t(914),a=t.n(s);const c=e=>{let{children:r}=e;return a().createElement("div",{className:"row","data-testid":"render-result"},r)}}}]);
+"use strict";(self.webpackChunktmx_mercury=self.webpackChunktmx_mercury||[]).push([[487],{487:(e,r,t)=>{t.r(r),t.d(r,{default:()=>u});var c=t(914),s=t.n(c);const u=e=>{let{children:r}=e;return s().createElement("div",{className:"mercury-grid","data-testid":"render-result"},r)}}}]);
