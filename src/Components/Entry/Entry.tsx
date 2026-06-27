@@ -7,7 +7,7 @@ class Entry extends React.Component {
         Notify();
 
         return (
-            <section className="container">
+            <section>
                 <Router />
             </section>
         );

@@ -1,6 +1,6 @@
 import React, { KeyboardEvent, Suspense, lazy, useEffect, useState } from 'react';
 import { TCard } from '../../types';
-import { Loading } from '../Feedback/Feedback';
+import { Loading, Warning } from '../Feedback/Feedback';
 import { useData } from '../../hooks';
 
 const Cards = lazy(() => import('../Cards'));
@@ -10,6 +10,7 @@ const RenderResult = lazy(() => import('../Render'));
 export const ListState = () => {
     const data = useData('estados');
     const [info, setInfo] = useState<JSX.Element[]>([]);
+    const [searchPerformed, setSearchPerformed] = useState(false);
 
     const srt = (a: { nome: number }, b: { nome: number }) => (a.nome > b.nome ? 1 : 0);
     const getSortData = (a: { nome: number }, b: { nome: number }) => (a.nome < b.nome ? -1 : srt(a, b));
@@ -21,9 +22,10 @@ export const ListState = () => {
     data.sort(getSortData);
     const renderData = data.map((info: TCard) => getCards(info));
 
-    useEffect(() => setInfo(renderData), [data])
+    useEffect(() => setInfo(renderData), [data]);
 
     const searchAction = (e: KeyboardEvent<HTMLInputElement>) => {
+        setSearchPerformed(true);
         const searchCards = data.filter((el: { nome: string }) => {
             const search = new RegExp((e.target as HTMLInputElement).value, 'gi');
             const input = el.nome;
@@ -35,11 +37,16 @@ export const ListState = () => {
 
     return (
         <Suspense fallback={<Loading />}>
-            <h1 className="py-3" data-testid="title-list-state">
-                Estados do Brasil
-            </h1>
-            <Search search={searchAction} />
-            <RenderResult>{!info?.length ? <Loading /> : info}</RenderResult>
+            <div className="mercury-page">
+                <header className="mercury-header">
+                    <h1 className="mercury-title" data-testid="title-list-state">
+                        Estados do Brasil
+                    </h1>
+                    <Search search={searchAction} />
+                </header>
+                <hr className="mercury-divider" />
+                <RenderResult>{!info?.length && data?.length > 0 && searchPerformed ? <Warning /> : !info?.length ? <Loading /> : info}</RenderResult>
+            </div>
         </Suspense>
     );
 };
