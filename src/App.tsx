@@ -3,8 +3,8 @@ import { BrowserRouter } from 'react-router-dom'
 import { Loading } from './Components/Feedback'
 import Entry from './Components/Entry'
 import { createPortal } from 'react-dom'
-import { rootStyle } from './utils'
 import { APP } from './contants'
+import styles from './App.scss'
 
 const App = () => {
 
@@ -20,11 +20,9 @@ const App = () => {
 
             shadowRoot.innerHTML = APP.LINK_STYLE ?? ''
 
-            const styleElement = rootStyle();
-            if (styleElement) {
-                const styleElement = rootStyle();
-                styleElement && shadowRoot.appendChild(styleElement);
-            }
+            const styleElement = document.createElement('style');
+            styleElement.textContent = styles;
+            shadowRoot.appendChild(styleElement);
         }
     }, []);
 

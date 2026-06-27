@@ -7,13 +7,15 @@ const tmxMercury = {
     rules: [
       {
         test: /\.scss$/,
-        use: [{
-          loader: "style-loader",
-          options: {
-            injectType: "singletonStyleTag",
-            insert: require.resolve("../src/utils.ts"),
+        use: [
+          {
+            loader: "css-loader",
+            options: {
+              exportType: "string",
+            },
           },
-        }, "css-loader", "sass-loader"],
+          "sass-loader",
+        ],
       },
       {
         test: /\.(js|jsx|tsx|ts)$/,

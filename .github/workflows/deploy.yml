@@ -46,9 +46,13 @@ jobs:
       
     - name: Run tests
       run: npm run test
+      env:
+        NODE_ENV: development
       
     - name: Run linting
       run: npm run lint
+      env:
+        NODE_ENV: development
 
   build-and-deploy:
     needs: test
