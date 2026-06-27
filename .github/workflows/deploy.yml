@@ -31,7 +31,9 @@ jobs:
         cache: 'npm'
         
     - name: Install dependencies
-      run: npm ci
+      run: npm ci --include=dev
+      env:
+        NODE_ENV: development
       
     - name: Run prefetch command
       run: npm run prefetch
@@ -64,7 +66,9 @@ jobs:
         cache: 'npm'
         
     - name: Install dependencies
-      run: npm ci
+      run: npm ci --include=dev
+      env:
+        NODE_ENV: development
       
     - name: Run prefetch command
       run: npm run prefetch
