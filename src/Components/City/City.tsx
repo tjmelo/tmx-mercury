@@ -3,9 +3,11 @@ import { ICity } from '../../types';
 
 const City: React.FC<ICity> = ({ nome, mesorregiao }): JSX.Element => {
     return (
-        <div className="municipios border border-primary alert alert-secondary" data-testid="city">
-            <strong className="text-primary">{nome}</strong> <sup className="text-muted">{mesorregiao}</sup>
-        </div>
+        <article className="mercury-city" data-testid="city">
+            <span className="mercury-city__name">{nome}</span>
+            <span className="mercury-city__divider" aria-hidden="true" />
+            <span className="mercury-city__region">{mesorregiao}</span>
+        </article>
     );
 };
 

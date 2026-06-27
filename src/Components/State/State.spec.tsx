@@ -14,8 +14,8 @@ test('Should render component <State/>', async () => {
     );
 
     // then
-    expect(screen.getByText('Muncípios do')).toBeInTheDocument();
-    expect(screen.getByText('Voltar para os estados')).toBeInTheDocument();
+    expect(screen.getByText(/Municípios do/i)).toBeInTheDocument();
+    expect(screen.getByText('voltar para os estados')).toBeInTheDocument();
 
 
     // Check for a heading (if present)

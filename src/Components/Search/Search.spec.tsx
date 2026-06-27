@@ -8,6 +8,6 @@ test('Should render component <Search />', async () => {
     render(<Search search={jest.fn()} />);
 
     // then
-    const element = screen.getByPlaceholderText('Digite o nome de um estado aqui...');
+    const element = screen.getByPlaceholderText('Buscar estado...');
     expect(element).toBeTruthy();
 });
