@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 env:
   REGISTRY: docker.io
   IMAGE_NAME: ${{ github.event.repository.name }}
@@ -58,9 +63,7 @@ jobs:
   build-and-deploy:
     needs: test
     runs-on: ubuntu-latest
-    
-    permissions:
-      contents: write
+    environment: github-pages
 
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     
@@ -151,12 +154,15 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+    - name: Upload Pages build artifact
+      if: github.event_name != 'pull_request'
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: ./build
+
     - name: Deploy to GitHub Pages
       if: github.event_name != 'pull_request'
-      run: npm run deploy -- --repo https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: actions/deploy-pages@v1
         
     - name: Serve build locally (for testing)
       if: github.event_name == 'pull_request'
