@@ -156,7 +156,7 @@ jobs:
 
     - name: Upload Pages build artifact
       if: github.event_name != 'pull_request'
-      uses: actions/upload-pages-artifact@v2
+      uses: actions/upload-pages-artifact@v4
       with:
         path: ./build
 
