@@ -60,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     
     permissions:
-      contents: write 
+      contents: write
 
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     
@@ -153,8 +153,9 @@ jobs:
 
     - name: Deploy to GitHub Pages
       if: github.event_name != 'pull_request'
-      run: npm run deploy
+      run: npm run deploy -- --repo https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
       env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Serve build locally (for testing)
