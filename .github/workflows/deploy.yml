@@ -141,6 +141,12 @@ jobs:
           NODE_ENV=${{ env.NODE_ENV }}
           PORT=${{ env.PORT }}
         
+    - name: Configure git identity for deploy
+      if: github.event_name != 'pull_request'
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
     - name: Deploy to GitHub Pages
       if: github.event_name != 'pull_request'
       run: npm run deploy
