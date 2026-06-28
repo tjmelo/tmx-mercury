@@ -63,10 +63,8 @@ jobs:
   build-and-deploy:
     needs: test
     runs-on: ubuntu-latest
-    environment: github-pages
-
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -97,6 +95,11 @@ jobs:
         NODE_ENV: production
         PORT: 3000
       
+    - name: Upload Pages build artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./build
+
     - name: Set up QEMU emulation (for cross-platform builds)
       uses: docker/setup-qemu-action@v2
 
@@ -154,20 +157,17 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-    - name: Upload Pages build artifact
-      if: github.event_name != 'pull_request'
-      uses: actions/upload-pages-artifact@v4
-      with:
-        path: ./build
+  deploy-pages:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
+    steps:
     - name: Deploy to GitHub Pages
-      if: github.event_name != 'pull_request'
-      uses: actions/deploy-pages@v1
-        
-    - name: Serve build locally (for testing)
-      if: github.event_name == 'pull_request'
-      run: |
-        npm run serve &
-        sleep 5
-        curl -f http://localhost:3000 || exit 1
-        pkill -f "serve -d build"
+      id: deployment
+      uses: actions/deploy-pages@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
