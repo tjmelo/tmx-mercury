@@ -57,7 +57,7 @@ jobs:
 
   build-and-deploy:
     needs: test
-    runs-on: ubuntu-
+    runs-on: ubuntu-latest
     
     permissions:
       contents: write 
