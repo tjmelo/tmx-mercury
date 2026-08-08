@@ -1,6 +1,6 @@
 {
     "name": "tmx-mercury",
-    "version": "1.5.6",
+    "version": "1.6.0",
     "dependencies": {
         "@testing-library/jest-dom": "^6.6.3",
         "@testing-library/react": "^14.2.1",
@@ -37,7 +37,8 @@
         "deploy": "gh-pages -d build",
         "serve": "serve -d build",
         "lint": "eslint --ext .tsx src/ && npx prettier --write . && npx prettier --check .",
-        "docker:dev": "docker build -t tmx-mercury . && docker run -dp 3000:3000 --name tmx-mercury-c tmx-mercury"
+        "docker:dev": "docker build -t tmx-mercury . && docker run -dp 3000:3000 --name tmx-mercury-c tmx-mercury",
+        "release": "standard-version"
     },
     "eslintConfig": {
         "extends": [
@@ -79,6 +80,7 @@
         "prettier": "^3.2.4",
         "sass-loader": "^16.0.4",
         "serve": "^14.2.4",
+        "standard-version": "^9.5.0",
         "style-loader": "^4.0.0",
         "typescript": "^5.6.3"
     },
