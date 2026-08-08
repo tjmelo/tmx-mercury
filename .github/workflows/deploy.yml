@@ -7,7 +7,8 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
   pages: write
   id-token: write
 
@@ -60,6 +61,78 @@ jobs:
       env:
         NODE_ENV: development
 
+  prepare-release:
+    needs: test
+    runs-on: ubuntu-latest
+    if: >
+      github.ref == 'refs/heads/main' &&
+      github.event_name == 'push' &&
+      !contains(github.event.head_commit.message, 'chore(release)')
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci --include=dev
+      env:
+        NODE_ENV: development
+
+    - name: Run prefetch command
+      run: npm run prefetch
+
+    - name: Run prelint command
+      run: npm run prelint
+
+    - name: Run init command
+      run: npm run prestart
+
+    - name: Configure git identity
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+    - name: Create release branch
+      run: git checkout -b release/next
+
+    - name: Run release command (version bump + changelog)
+      run: npm run release
+
+    - name: Push release branch
+      run: git push origin release/next --force
+
+    - name: Read new version
+      id: version
+      run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+    - name: Create or update release pull request
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        if gh pr view release/next --json number >/dev/null 2>&1; then
+          echo "PR de release já existe, branch atualizada."
+        else
+          gh pr create \
+            --title "chore(release): v${{ steps.version.outputs.version }}" \
+            --body "PR automática gerada por 'npm run release'. Ao ser mergeada, publica a versão v${{ steps.version.outputs.version }}." \
+            --base main \
+            --head release/next
+        fi
+
+    - name: Enable auto-merge on release PR
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: gh pr merge release/next --auto --squash
+      continue-on-error: true
+
   build-and-deploy:
     needs: test
     runs-on: ubuntu-latest
@@ -68,6 +141,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
       
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -88,7 +163,11 @@ jobs:
       
     - name: Run init command
       run: npm run prestart
-      
+
+    - name: Read current version
+      id: version
+      run: echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
     - name: Build application
       run: npm run build
       env:
@@ -132,6 +211,7 @@ jobs:
           type=ref,event=pr
           type=sha,prefix={{branch}}-
           type=raw,value=latest,enable={{is_default_branch}}
+          type=raw,value=v${{ steps.version.outputs.version }},enable=${{ github.event_name != 'pull_request' }}
           
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
@@ -147,15 +227,17 @@ jobs:
           TMX_PATH=${{ env.TMX_PATH }}
           TMX_NAME=${{ env.TMX_NAME }}
           PROJECT_NAME=${{ env.PROJECT_NAME }}
-          PROJECT_VERSION=${{ env.PROJECT_VERSION }}
+          PROJECT_VERSION=${{ steps.version.outputs.version }}
           NODE_ENV=${{ env.NODE_ENV }}
           PORT=${{ env.PORT }}
-        
-    - name: Configure git identity for deploy
-      if: github.event_name != 'pull_request'
+
+    - name: Tag release commit
+      if: contains(github.event.head_commit.message, 'chore(release)')
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git tag "v${{ steps.version.outputs.version }}"
+        git push origin "v${{ steps.version.outputs.version }}"
 
   deploy-pages:
     needs: build-and-deploy

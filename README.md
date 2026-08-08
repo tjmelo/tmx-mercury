@@ -3,112 +3,112 @@
 ![Size](https://img.shields.io/github/repo-size/tjmelo/tmx-mercury) ![Version](https://img.shields.io/github/package-json/v/tjmelo/tmx-mercury) ![Release](https://img.shields.io/github/v/release/tjmelo/tmx-mercury) ![Last Commit](https://img.shields.io/github/last-commit/tjmelo/tmx-mercury/main)
 ![Passing](https://img.shields.io/github/actions/workflow/status/tjmelo/tmx-mercury/checkout-ci.yml)
 
-## Table of content
+# TMX Mercury
 
--   [About app](#about-app)
--   [Preview Screens](#preview-screens)
--   [Project details](#project-details)
-    -   [Simple Develop Process](#simple-develop-process)
-    -   [Docker Develop Process](#docker-develop-process)
--   [Contributing](#preview-screens)
--   [License](#license)
--   [Testing](#testing)
+TMX Mercury is a polished front-end project designed to help users explore Brazilian states and their counties through a fast, intuitive interface. The experience combines search, navigation, and responsive design to make regional data easy to browse.
 
+Live demo: [https://tjmelo.github.io/tmx-mercury/](https://tjmelo.github.io/tmx-mercury/)
 
+## Table of contents
 
-# About app
+- [Overview](#overview)
+- [Highlights](#highlights)
+- [Tech stack](#tech-stack)
+- [AI-assisted development process](#ai-assisted-development-process)
+- [Interface preview](#interface-preview)
+- [Getting started](#getting-started)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
 
-### The project proposal is to show a listed county for states in Brazil. It works like this:
+## Overview
 
--   There's a state list, where you can search for their specific state or clicking in a button card.
--   When you click on the card, it will be shown you a list of countries the state chose.
+The project focuses on a simple but effective user journey:
 
+- browse a list of Brazilian states
+- search for a specific state quickly
+- open the state to view its counties
+- navigate through the interface without friction
 
-Browse and search counties for each state in Brazil with an interactive web application. TMX Mercury provides a fast, intuitive interface to explore state and county data, featuring responsive design and easy navigation.
+This project was created as a portfolio-style showcase of modern frontend development, clean component structure, and a thoughtful user experience.
 
-- Search for Brazilian states
-- View counties by state
-- Responsive design
-- Fast and intuitive navigation
+## Highlights
 
+- Search for Brazilian states with a lightweight interaction model
+- Explore counties by selecting a state card
+- Responsive layout for desktop and mobile screens
+- Smooth and accessible navigation experience
+- Clean, maintainable component-based architecture
 
-Online project: [https://tjmelo.github.io/tmx-mercury/](https://tjmelo.github.io/tmx-mercury/)
+## Tech stack
 
-# Preview Screens
+The app is built with a modern React-based stack:
 
-![Screen](/public/TMXMercury.png)
+- React 18 + TypeScript
+- React Router DOM for navigation
+- Bootstrap and SCSS for styling
+- Axios for API requests
+- Jest and Testing Library for automated testing
+- Webpack for build and bundling
+- Docker support for containerized development
 
-![Screen](/public/TMXMercury2screen.png)
+## AI-assisted development process
 
-# Project Details
+This project also reflects an AI-assisted workflow for modern software development:
 
-Some principal project dependencies
+- GitHub Copilot was used to accelerate component scaffolding and iteration
+- AI support helped with TypeScript refinements, test suggestions, and code cleanup
+- The development approach focused on readability, maintainability, and a portfolio-ready presentation
 
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/bootstrap?color=blue)
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/sass?color=blue)
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/scrollreveal?color=blue)
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/axios?color=blue)
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/react?color=blue)
-![Lib](https://img.shields.io/github/package-json/dependency-version/tjmelo/tmx-mercury/react-router-dom?color=blue)
+The goal was not just to build a functional app, but to create a clear example of how AI tools can support faster, more structured frontend development.
 
-## Simple Develop Process
+## Interface preview
 
-Download the project
+A glimpse of the latest interface:
 
-Clone or fork this repository
+![State selection interface](public/TMXMercury.png)
+
+![County exploration interface](public/TMXMercury2screen.png)
+
+## Getting started
+
+### Local development
 
 ```sh
 git clone https://github.com/tjmelo/tmx-mercury.git
-
 cd tmx-mercury
-
-git checkout -b develop
-
-npm install && npm start
+npm install
+npm start
 ```
 
-## Docker Develop Process
+Then open: http://localhost:3000/tmx-mercury
+
+### Docker development
 
 ```sh
 git clone https://github.com/tjmelo/tmx-mercury.git
-
 cd tmx-mercury
-
 docker compose up -d
 ```
 
-Install from the command line
+You can also pull the published image:
 
-```
+```sh
 docker pull ghcr.io/tjmelo/tmx-mercury:latest
 ```
 
-or image in **Docker Hub** for optional download
+## Testing
 
-```
-docker pull tmwd/tmx-mercury
+Run the test suite with:
+
+```sh
+npm test
 ```
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request. For major changes, open an issue first to discuss what you would like to change.
+Contributions are welcome. If you plan to make a significant change, feel free to open an issue first so the direction can be discussed clearly.
 
 ## License
 
 MIT
-
-## Testing
-
-To run tests:
-
-```sh
-yarn test
-```
-
-For questions, open an issue.
-
-Open the app on a browser http://localhost:3000/tmx-mercury
-
----
-
-Have a fun! :tada:
