@@ -68,6 +68,9 @@ jobs:
       github.ref == 'refs/heads/main' &&
       github.event_name == 'push' &&
       !contains(github.event.head_commit.message, 'chore(release)')
+    env:
+      HUSKY: '0'
+      HUSKY_SKIP_HOOKS: '1'
 
     steps:
     - name: Checkout code
@@ -105,6 +108,8 @@ jobs:
 
     - name: Run release command (version bump + changelog)
       run: npm run release
+      env:
+        NODE_ENV: development
 
     - name: Push release branch
       run: git push origin release/next --force
