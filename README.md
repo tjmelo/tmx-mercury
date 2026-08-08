@@ -4,7 +4,7 @@
 ![Passing](https://img.shields.io/github/actions/workflow/status/tjmelo/tmx-mercury/checkout-ci.yml)
 
 # TMX Mercury
-
+>[!NOTE]
 TMX Mercury is a polished front-end project designed to help users explore Brazilian states and their counties through a fast, intuitive interface. The experience combines search, navigation, and responsive design to make regional data easy to browse.
 
 Live demo: [https://tjmelo.github.io/tmx-mercury/](https://tjmelo.github.io/tmx-mercury/)
@@ -29,7 +29,7 @@ The project focuses on a simple but effective user journey:
 - search for a specific state quickly
 - open the state to view its counties
 - navigate through the interface without friction
-
+>[!IMPORTANT]
 This project was created as a portfolio-style showcase of modern frontend development, clean component structure, and a thoughtful user experience.
 
 ## Highlights
